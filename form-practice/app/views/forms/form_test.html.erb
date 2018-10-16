@@ -1,0 +1,8 @@
+<h1>フォームのテストです</h1>
+<%= form_tag("/create") do %>
+    <%= text_field :form_test, :age %>
+    <%= text_field :form_test, :country %>
+    <%= submit_tag "送信" %>
+<% end %>
+
+<%= hello("迫") %>

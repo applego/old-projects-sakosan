@@ -1,0 +1,27 @@
+<h1>ユーザの名前と年齢を管理するアプリ</h1>
+<%= form_tag("/create") do %>
+    <%= label_tag "名前" %>
+    <%= text_field :user,:user_name %>
+    <%= label_tag "年齢" %>
+    <%= text_field :user,:age %>
+    <%= label_tag "メールアドレス" %>
+    <%= text_field :user,:mail %>
+    <%= submit_tag "送信する" %>
+<% end %>
+
+<h1>ユーザ一覧</h1>
+<table class="table table-striped">
+    <tr>
+        <td>user name</td>
+        <td>age</td>
+        <td>mail</td>
+    </tr>
+<% @users.each do |user| %>
+<tr>
+    <td><%= user.name %></td>
+    <td><%= user.age %></td>
+    <td><%= user.mail %></td>
+</tr>
+    
+<% end %>
+</table>

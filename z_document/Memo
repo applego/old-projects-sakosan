@@ -1,0 +1,64 @@
+◇Rails編
+
+#cloud9にインストール
+gem install rails
+rails -v
+
+
+#新しいアプリを作成
+rails new [アプリ名]
+
+#railsのサーバーを起動
+rails s -b $IP -p $PORT
+
+#controller (generate)
+rails g controller greets
+
+#routes.rb
+ルーティングを作るためのファイル
+
+#controllerを作る→controllerの中にアクションを定義し、処理を記載
+    →routes.rbに 
+    Rails.application.routes.draw do
+        get "/aisatsu",to:"greets#hello"  ←を追加　（URL→どのcontrollerのどのaction）
+            # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    end
+        →URLに/aisatsu が記載されたら（HTTPのGetメソッドで/aisatsuを要求されたら）
+            →greetsコントローラーのhelloアクションの処理を行う
+            
+#アクションを定義した状態でcontrollerを作成
+rails g controller memos index
+
+#controllerを単数形で作ることも可能だが、設計の思想上よろしくない
+    直にDeleteするのではなく　rails destory controller [消したいコントローラー名]
+    
+#現在のルートの一覧を表示
+rake routes    
+
+#HTMLの中にRubyのコードを書き込める
+    myname.html.erb(embed rubyの略)
+    <%= 5*5%>　表示される
+    <% 5*5%>　 表示されない
+
+#DOCTYPE とか headとかいらんのか
+    →views/layouts/application.html.erbにテンプレートhtmlが記載されてる
+    テンプレートのyieldに埋め込まれる
+
+#cssの書き方
+    cssは app.assets/stylesheets　内にコントロールに対応したcssが作成される
+
+#設定より規約
+    フォルダ数が多いが慣れれば大丈夫
+    
+#足し算アプリ作成
+    1.アプリのひな形を作る
+    2.コントローラを作る
+    3.ルーティングの設定
+    4.ビューを作る
+    5.フォームを作る
+    6.ルーティングを再設定
+    7.コントローラを再設定
+    8.デザインを当てる
+    
+#Views/layouts/application.html.erb
+    にBootstrapの参照を記載

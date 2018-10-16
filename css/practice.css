@@ -1,0 +1,12 @@
+p{
+    border:solid red;
+    
+}
+
+#change{
+    /*padding-top:15px;
+    padding-right:20px;
+    padding-bottom:10px;
+    padding-left:30px;*/
+    padding:15px 20px 10px 30px;
+}
